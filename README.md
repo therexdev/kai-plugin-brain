@@ -4,6 +4,8 @@ Private Brain workspace for KAI Core 0.2.0. Reuses the existing encrypted `compa
 
 ## Available now
 
+The separate window keeps the original Brain section rail, memory and source cards, and goal board, with the same light workspace styling as KAI Core.
+
 - Search, read, create, revise, pin, categorize, and forget personal memories.
 - Create, update, complete, pause, and remove goals.
 - View existing sources and the memories imported from them.
