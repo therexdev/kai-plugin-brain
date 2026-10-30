@@ -1,18 +1,32 @@
 {
-  "schema": 1,
-  "apiVersion": 2,
+  "schema": 2,
+  "apiVersion": 3,
   "id": "kai.brain",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "name": "Brain",
-  "description": "The original complete Brain workspace: memories, graph, goals, sources, awareness, orchestration and your existing encrypted data.",
+  "description": "Private memories, goals, sources and background awareness, with its own encrypted data and complete local engine.",
   "entry": "index.html",
   "permissions": [
-    "brain.read",
-    "brain.write",
-    "brain.import",
-    "brain.export",
+    "native.execute",
+    "models.read",
+    "inference.local",
+    "network.status",
+    "network.fetch",
+    "secrets.use",
+    "services.call",
+    "services.provide",
     "desktop.navigate",
     "desktop.external",
-    "brain.workflow"
+    "desktop.windows"
+  ],
+  "runtime": "native",
+  "service": "service/index.js",
+  "provides": [
+    "kai.brain"
+  ],
+  "consumes": [
+    "kai.connections",
+    "kai.workflows",
+    "kai.assistant"
   ]
 }
