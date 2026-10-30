@@ -1,5 +1,0 @@
-"use strict";
-const {test}=require("node:test"),assert=require("node:assert/strict"),{notePayload}=require("../plugin/model");
-test("editing a personal note keeps its exact identity and revision",()=>{const prior={id:"note-1",revision:"approved-revision",text:"old"};const p=notePayload(prior,{title:"New",text:"Updated",category:"projects",tags:" KAI,  privacy ,",pinned:true});assert.deepEqual(p,{id:"note-1",revision:"approved-revision",title:"New",text:"Updated",category:"projects",tags:["KAI","privacy"],pinned:true});assert.equal(prior.text,"old");});
-test("imported memories cannot be turned into editable personal notes",()=>{assert.throws(()=>notePayload({id:"source:0",sourceId:"source"},{text:"overwritten"}),/read-only/);});
-test("new note does not invent a prior revision or leak hidden source metadata",()=>{const p=notePayload({private:"ignored"},{title:"New",text:"Text"});assert.equal(p.id,undefined);assert.equal(p.revision,undefined);assert.equal(p.private,undefined);assert.deepEqual(p.tags,[]);});

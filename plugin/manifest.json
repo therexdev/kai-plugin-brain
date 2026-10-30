@@ -2,14 +2,17 @@
   "schema": 1,
   "apiVersion": 2,
   "id": "kai.brain",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "name": "Brain",
-  "description": "Your private memories, goals and imported sources. Reuses the encrypted Brain saved by KAI Alpha and Test.",
+  "description": "The original complete Brain workspace: memories, graph, goals, sources, awareness, orchestration and your existing encrypted data.",
   "entry": "index.html",
   "permissions": [
     "brain.read",
     "brain.write",
     "brain.import",
-    "brain.export"
+    "brain.export",
+    "desktop.navigate",
+    "desktop.external",
+    "brain.workflow"
   ]
 }

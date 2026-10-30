@@ -1,18 +1,12 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KAI Brain</title><link rel="stylesheet" href="kai-theme.css"><link rel="stylesheet" href="style.css"></head>
-<body>
-<header class="workspace-header"><div class="workspace-heading"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4a3 3 0 0 0-5 2 3 3 0 0 0-1 5 4 4 0 0 0 1 7 3 3 0 0 0 5 2M15 4a3 3 0 0 1 5 2 3 3 0 0 1 1 5 4 4 0 0 1-1 7 3 3 0 0 1-5 2M9 4v16M15 4v16M9 8H6M15 8h3M9 15H6M15 15h3M9 12h6"/></svg><h1>Brain</h1></div><span class="workspace-caption">Your private knowledge</span></header>
-<div id="message" role="status" hidden></div>
-<div class="hub-shell">
-<nav class="hub-rail" aria-label="Brain sections"><div class="hub-rail-label">KAI Brain</div><button data-tab="memories" class="active" aria-current="page">Memories</button><button data-tab="goals">Goals</button><button data-tab="sources">Sources</button><div class="rail-footer"><div class="stats" id="metrics"></div><button id="export" class="export-button">Export Markdown</button></div></nav>
-<main class="hub-content">
-<section id="library"><div class="bn-heading"><div><h2 id="section-title">Your memories</h2><p id="section-detail">Search exact source text and your saved knowledge.</p></div><div class="actions"><button id="create" class="primary">Add memory</button><button id="import">Import file</button><button id="import-folder" hidden>Import folder</button></div></div>
-<div class="toolbar" id="filters"><label>Search<input id="search" type="search" placeholder="People, topics, projects…"></label><label>Source<select id="filter-source"><option value="">All sources</option></select></label><label>Category<select id="filter-category"><option value="">All categories</option></select></label><label>Updated since<input id="filter-since" type="date"></label></div>
-<p id="result-count" class="muted"></p><section id="list" class="hub-grid" aria-label="Saved items"></section></section>
-<section id="editor" class="editor" hidden><div class="editor-heading"><button id="editor-close" type="button">← Back</button><h2 id="editor-title">Memory</h2></div>
-<div id="empty" hidden></div>
-<form id="note-form" class="hub-panel" hidden><label for="note-title">Title</label><input id="note-title" maxlength="120" required><label for="note-text">Memory</label><textarea id="note-text" rows="12" maxlength="12000" required></textarea><div class="columns"><div><label for="category">Category</label><select id="category"><option value="notes">Notes</option><option value="preferences">Preferences</option><option value="people">People</option><option value="projects">Projects</option></select></div><div><label for="tags">Tags, separated by commas</label><input id="tags" maxlength="500"></div></div><label class="check"><input id="pinned" type="checkbox">Pin for recall</label><p id="note-source" class="muted"></p><div class="actions"><button class="primary" id="save-note">Save memory</button><button type="button" id="delete-note" class="danger">Forget</button><span id="dirty-note" class="muted"></span></div></form>
-<form id="goal-form" class="hub-panel" hidden><label for="goal-title">Goal</label><input id="goal-title" maxlength="200" required><label for="goal-detail">Details</label><textarea id="goal-detail" rows="9" maxlength="2000"></textarea><div class="columns"><div><label for="goal-status">Status</label><select id="goal-status"><option value="active">Active</option><option value="paused">Paused</option><option value="done">Done</option></select></div><div><label for="goal-priority">Priority</label><select id="goal-priority"><option value="normal">Normal</option><option value="high">High</option></select></div></div><p class="muted">Goals are personal context. Saving a goal does not schedule a reminder or run an action.</p><div class="actions"><button class="primary">Save goal</button><button type="button" id="delete-goal" class="danger">Forget</button></div></form>
-<section id="source-detail" class="hub-panel" hidden><span class="badge">Saved source</span><h2 id="source-name"></h2><p id="source-info"></p><p class="muted">Imported sources are saved snapshots. This window does not start background synchronization or change connected accounts.</p><button id="delete-source" class="danger">Forget source &amp; its memories</button></section>
-</section>
-</main></div><script src="kai-notices.js"></script><script src="model.js"></script><script src="app.js"></script></body></html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KAI Brain</title>
+<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="brain.css"><link rel="stylesheet" href="product-experience.css"><link rel="stylesheet" href="plugin-window.css"></head>
+<body><div id="app"><main id="main"><section id="view-brain" class="view companion-hub" aria-label="brain"></section></main></div>
+<script src="locales/catalogs.js"></script>
+<script src="i18n.js"></script>
+<script src="plugin-bridge.js"></script>
+<script src="companion-client.js"></script>
+<script src="brain.js"></script>
+<script src="companion-hub.js"></script>
+<script src="plugin-entry.js"></script>
+</body></html>

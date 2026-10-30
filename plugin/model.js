@@ -1,2 +1,0 @@
-"use strict";
-(function(root){const api={notePayload(record,fields){if(record.sourceId)throw Error("Imported memories are read-only");return {id:record.id,revision:record.revision,title:fields.title,text:fields.text,category:fields.category,tags:String(fields.tags||"").split(",").map(t=>t.trim()).filter(Boolean),pinned:fields.pinned===true};}};if(typeof module==="object")module.exports=api;else root.BrainModel=api;})(typeof window==="undefined"?globalThis:window);
