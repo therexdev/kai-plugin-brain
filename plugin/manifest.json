@@ -1,0 +1,1 @@
+{"schema":1,"apiVersion":2,"id":"kai.brain","version":"0.1.0","name":"Brain","description":"Your private memories, goals and imported sources. Reuses the encrypted Brain saved by KAI Alpha and Test.","entry":"index.html","permissions":["brain.read","brain.write","brain.import","brain.export"]}
