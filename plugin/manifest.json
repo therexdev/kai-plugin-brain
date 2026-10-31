@@ -2,7 +2,7 @@
   "schema": 2,
   "apiVersion": 3,
   "id": "kai.brain",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "name": "Brain",
   "description": "Private memories, goals, sources and background awareness, with its own encrypted data and complete local engine.",
   "entry": "index.html",
