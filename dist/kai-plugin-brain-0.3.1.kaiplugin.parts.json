@@ -1,0 +1,13 @@
+{
+  "format": 1,
+  "asset": "kai-plugin-brain-0.3.1.kaiplugin",
+  "bytes": 765329,
+  "sha256": "9cefde0e6a6d9b1b3d9d685dd89f6395c2d6cf39c97ba6429f70fb244cc0ad32",
+  "parts": [
+    {
+      "file": "kai-plugin-brain-0.3.1.kaiplugin.part001",
+      "bytes": 765329,
+      "sha256": "9cefde0e6a6d9b1b3d9d685dd89f6395c2d6cf39c97ba6429f70fb244cc0ad32"
+    }
+  ]
+}

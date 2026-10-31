@@ -94,7 +94,7 @@
       if (name === "closeTask") { editingTask = null; draw(); return; }
       if (["rememberInsight", "taskInsight", "dismissInsight"].includes(name)) await manage("brainReview", { id: key, decision: { rememberInsight: "remember", taskInsight: "task", dismissInsight: "dismiss" }[name] });
       else if (name === "toggleCheck" || name === "removeCheck") { const t = state.brain.awareness.customTasks.find(t => t.id === key); await manage("awarenessTask", { ...t, enabled: !t.enabled, remove: name === "removeCheck" }); }
-      else if (name === "clearHistory") { if (!confirm("Clear retained memory changes and activity? Your current memories will stay.")) return; await manage("brainClearHistory"); }
+      else if (name === "clearHistory") { if (!await window.kai.dialogs.confirm("Clear retained memory changes and activity? Your current memories will stay.") || !alive()) return; await manage("brainClearHistory"); }
       else if (name === "briefing" || name === "summary") await manage("awarenessRun", { kind: name });
       else if (name === "exportBrainVault") { const result = await manage(name); if (result) note(`Exported ${result.notes} memories to ${result.folder}. Open that folder as an Obsidian vault or use any Markdown editor.`); return; }
       else await manage(name, key ? { id: key } : {});
