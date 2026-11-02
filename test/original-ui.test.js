@@ -4,6 +4,8 @@ const root = path.join(__dirname, "../plugin"), original = require("../plugin/or
 test("upstream renderer assets retain their hashes outside documented Foundation dialog adaptations", () => {
   for (const [file, hash] of Object.entries(original.files)) {
     let content = fs.readFileSync(path.join(root, file));
+    const adaptation = original.adaptations?.[file];
+    if (adaptation) { assert.ok(adaptation.reason); assert.equal(crypto.createHash("sha256").update(content).digest("hex"), adaptation.sha256, file); continue; }
     if (file === "companion-hub.js") content = content.toString().replace("Unlock secure OS storage and reopen this app. Saved plugin data has been preserved.", "Unlock your original OS keychain and restart KAI. Your saved data will stay intact.").replace('await window.kai.dialogs.confirm("Remove this " + deleting[name][1] + "?")', 'confirm("Remove this " + deleting[name][1] + "?")');
     if (file === "brain.js") content = content.toString().replace('await window.kai.dialogs.confirm("Clear retained memory changes and activity? Your current memories will stay.") || !alive()', 'confirm("Clear retained memory changes and activity? Your current memories will stay.")');
     if (file === "connections.js") content = content.toString().replace('<button type="button" class="cn-button cn-dialog-close" data-cn="close" aria-label="Close dialog" title="Close">×</button>', '${btn("Close", "close")}');
