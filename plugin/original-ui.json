@@ -11,5 +11,11 @@
     "locales/catalogs.js": "cc7888d38d13d74fc7628a8f0f66ac68fef00a86429afe7c93ef4b36ac49c3a6",
     "brand-mark.svg": "beb103d9ef1bd3c9da90d4bde6032d20b4c0a84e9f8e7de9aee84d49df49665b",
     "brain.js": "760086624d1215fe6385806607cc56675ffb792d8558eba11ce46a8a642149e2"
+  },
+  "adaptations": {
+    "i18n.js": {
+      "sha256": "05558760b6886a7469043d74d91c70946d8f16292318e8d247d7043c0e1c54b2",
+      "reason": "Follow the shared Core language without origin-local preferences; bind interface text separately from user content."
+    }
   }
 }
